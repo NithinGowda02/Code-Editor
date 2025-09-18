@@ -1,0 +1,133 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181c24;
+    color: #f1f1f1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 24px;
+}
+
+/* Layout */
+.left-part, .right-part {
+    background: #23283a;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    padding: 24px;
+    margin: 12px;
+}
+
+.left-part {
+    flex: 1 1 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.right-part {
+    flex: 2 1 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 320px;
+    max-width: 900px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #8ecae6;
+    letter-spacing: 1px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 90px;
+    resize: vertical;
+    border-radius: 8px;
+    border: 1px solid #3a3f58;
+    background: #1a1e2d;
+    color: #f1f1f1;
+    font-size: 1rem;
+    padding: 10px;
+    transition: border 0.2s;
+}
+
+textarea:focus {
+    border: 1.5px solid #219ebc;
+    outline: none;
+    background: #23283a;
+}
+
+iframe#output {
+    width: 100%;
+    min-height: 350px;
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    margin-top: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    body {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+    }
+    .left-part, .right-part {
+        max-width: 100%;
+        margin: 8px 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .left-part, .right-part {
+        padding: 14px;
+        border-radius: 8px;
+    }
+    textarea {
+        min-height: 60px;
+        font-size: 0.95rem;
+    }
+    iframe#output {
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 4px;
+    }
+    .left-part, .right-part {
+        padding: 8px;
+        margin: 4px 0;
+    }
+    label {
+        font-size: 0.98rem;
+    }
+    textarea {
+        font-size: 0.92rem;
+        padding: 7px;
+    }
+    iframe#output {
+        min-height: 120px;
+    }
+}
